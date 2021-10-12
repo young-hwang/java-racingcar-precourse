@@ -10,7 +10,7 @@ public class Car {
     }
 
     private final String name;
-    private int location;
+    private int distance;
 
     public Car(String name) {
         this.name = name;
@@ -20,18 +20,18 @@ public class Car {
         return name;
     }
 
-    public void setLocation(int location) {
-        this.location = location;
+    public void setDistance(int distances) {
+        this.distance = distances;
     }
 
-    public int getLocation() {
-        return location;
+    public int getDistance() {
+        return distance;
     }
 
     public void running(int num) {
         if (num <= STOP) {
             return;
         }
-        this.location++;
+        this.distance++;
     }
 }
