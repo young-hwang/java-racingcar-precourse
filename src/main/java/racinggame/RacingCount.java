@@ -18,10 +18,9 @@ public class RacingCount {
     }
 
     private int convertNumber(String count) {
-        try {
-            return Integer.parseInt(count);
-        } catch (NumberFormatException e) {
+        if (count.isEmpty()) {
             throw new IllegalArgumentException(RACING_COUNT_ERROR);
         }
+        return Integer.parseInt(count);
     }
 }

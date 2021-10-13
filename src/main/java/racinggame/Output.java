@@ -1,8 +1,9 @@
 package racinggame;
 
 public class Output {
-    private static final String INPUT_RACING_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분";
+    private static final String INPUT_RACING_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
     private static final String INPUT_RACING_COUNT = "시도할 회수는 몇회인가요?";
+    private static final String OUTPUT_RACING_WINNER = "최종 우승자는 %s 입니다.";
 
     public static void printInputCarNames() {
         System.out.println(Output.INPUT_RACING_CAR_NAMES);
@@ -12,7 +13,7 @@ public class Output {
         System.out.println(Output.INPUT_RACING_COUNT);
     }
 
-    public static void showDistance(Car car) {
+    public static void printOutputDistance(Car car) {
         System.out.println(car.getName() + " : " + Output.drawLine(car));
     }
 
@@ -22,5 +23,9 @@ public class Output {
             line.append("-");
         }
         return line.toString();
+    }
+
+    public static void printOutputWinner(String winners) {
+        System.out.println(String.format(Output.OUTPUT_RACING_WINNER, winners));
     }
 }

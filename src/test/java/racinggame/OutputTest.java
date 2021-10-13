@@ -18,7 +18,7 @@ public class OutputTest {
 
         Car car = new Car("pobi");
         car.setDistance(3);
-        Output.showDistance(car);
+        Output.printOutputDistance(car);
 
         Mockito.verify(mockedPrintStream).println("pobi : ---");
     }
