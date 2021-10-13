@@ -11,8 +11,12 @@ public class Car {
         FORWARD = 4;
     }
 
-    private final String name;
+    private String name;
     private int distance = 0;
+
+    public Car() {
+
+    }
 
     public Car(String name) {
         this.name = name;
@@ -35,6 +39,16 @@ public class Car {
             return;
         }
         this.distance++;
+    }
+
+    public RacingStatus compareDistance(Car car) {
+        if (this.getDistance() > car.getDistance()) {
+            return RacingStatus.WIN;
+        }
+        if (this.getDistance() == car.getDistance()) {
+            return RacingStatus.EQUAL;
+        }
+        return RacingStatus.LOSE;
     }
 
     @Override

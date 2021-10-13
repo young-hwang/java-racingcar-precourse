@@ -44,4 +44,37 @@ public class CarTest {
         car.running(3);
         assertThat(car.getDistance()).isEqualTo(1);
     }
+
+    @DisplayName("자동차 거리 비교 승리 테스트")
+    @Test
+    public void 자동차_거리_비교_승리_테스트() {
+        Car car1 = new Car("pobi");
+        Car car2 = new Car("ppororo");
+
+        car1.setDistance(3);
+        car2.setDistance(2);
+        assertThat(car1.compareDistance(car2)).isEqualTo(RacingStatus.WIN);
+    }
+
+    @DisplayName("자동차 거리 비교 동등 테스트")
+    @Test
+    public void 자동차_거리_비교_동등_테스트() {
+        Car car1 = new Car("pobi");
+        Car car2 = new Car("ppororo");
+
+        car1.setDistance(2);
+        car2.setDistance(2);
+        assertThat(car1.compareDistance(car2)).isEqualTo(RacingStatus.EQUAL);
+    }
+
+    @DisplayName("자동차 거리 비교 패배 테스트")
+    @Test
+    public void 자동차_거리_비교_패배_테스트() {
+        Car car1 = new Car("pobi");
+        Car car2 = new Car("ppororo");
+
+        car1.setDistance(2);
+        car2.setDistance(3);
+        assertThat(car1.compareDistance(car2)).isEqualTo(RacingStatus.LOSE);
+    }
 }
